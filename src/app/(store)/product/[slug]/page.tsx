@@ -61,6 +61,13 @@ export default function ProductPage() {
             </button>
           </div>
         </div>
+
+        <button
+          type="button"
+          className="mt-8 flex h-12 items-center justify-center rounded-full bg-emerald-600 font-semibold text-white hover:bg-emerald-700 transition-all"
+        >
+          Adicionar ao carrinho
+        </button>
       </div>
     </div>
   );
