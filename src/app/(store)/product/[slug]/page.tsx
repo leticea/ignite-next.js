@@ -31,7 +31,9 @@ export default function ProductPage() {
           </span>
         </div>
 
-        
+        <div className="mt-8 space-y-4">
+          <span className="block font-semibold">Tamanhos</span>
+        </div>
       </div>
     </div>
   );
