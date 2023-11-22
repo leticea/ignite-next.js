@@ -33,6 +33,33 @@ export default function ProductPage() {
 
         <div className="mt-8 space-y-4">
           <span className="block font-semibold">Tamanhos</span>
+
+          <div className="flex gap-2">
+            <button
+              type="button"
+              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-600 bg-zinc-800 text-sm font-semibold"
+            >
+              P
+            </button>
+            <button
+              type="button"
+              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-600 bg-zinc-800 text-sm font-semibold"
+            >
+              M
+            </button>
+            <button
+              type="button"
+              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-600 bg-zinc-800 text-sm font-semibold"
+            >
+              G
+            </button>
+            <button
+              type="button"
+              className="flex h-9 w-14 items-center justify-center rounded-full border border-zinc-600 bg-zinc-800 text-sm font-semibold"
+            >
+              GG
+            </button>
+          </div>
         </div>
       </div>
     </div>
