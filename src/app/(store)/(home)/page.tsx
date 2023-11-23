@@ -35,7 +35,6 @@ export default async function Home() {
           height={920}
           quality={100}
         />
-
         <div className="absolute bottom-28 right-28 h-12 flex items-center gap-2 max-w-[280px] rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5">
           <span className="text-sm truncate">{highlightedProduct.title}</span>
           <span className="flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold">
