@@ -1,3 +1,5 @@
+import { api } from "@/data/api";
+import { Product } from "@/data/types/product";
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
@@ -10,7 +12,19 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default async function Image() {
+async function getProduct(slug: string): Promise<Product> {
+  const response = await api(`/products/${slug}`, {
+    next: {
+      revalidate: 60 * 60, // 1 hour
+    },
+  });
+  const products = await response.json();
+  return products;
+}
+
+export default async function Image({ params }: { params: { slug: string } }) {
+  const product = await getProduct(params.slug);
+
   return new ImageResponse(
     (
       <div
