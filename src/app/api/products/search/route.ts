@@ -9,8 +9,6 @@ export async function GET(request: NextRequest) {
 
   const query = z.string().parse(searchParams.get("q"));
 
-  const product = data.products.find((product) => product.slug === slug);
-
   const products = data.products.filter((product) => {
     return product.title
       .toLocaleLowerCase()
