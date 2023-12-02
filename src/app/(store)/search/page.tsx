@@ -1,16 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
-export default async function Search() {
+interface SearchProps {
+  searchParams: {
+    q: string;
+  };
+}
+
+export default async function Search({ searchParams }: SearchProps) {
+  const { q: query } = searchParams;
+
+  if (!query) {
+    redirect("/");
+  }
+
   return (
     <div className="flex flex-col gap-4">
       <p className="text-sm">
-        Resultados para: <span className="font-semibold">moletom</span>
+        Resultados para: <span className="font-semibold">{query}</span>
       </p>
 
       <div className="grid grid-cols-3 gap-6">
         <Link
-          href={`/product/moletom-never-stop-learning}`}
+          href={`/product/moletom-never-stop-learning`}
           className="group relative rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end"
         >
           <Image
@@ -37,7 +50,7 @@ export default async function Search() {
           </div>
         </Link>
         <Link
-          href={`/product/moletom-never-stop-learning}`}
+          href={`/product/moletom-never-stop-learning`}
           className="group relative rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end"
         >
           <Image
@@ -64,7 +77,7 @@ export default async function Search() {
           </div>
         </Link>
         <Link
-          href={`/product/moletom-never-stop-learning}`}
+          href={`/product/moletom-never-stop-learning`}
           className="group relative rounded-lg bg-zinc-900 overflow-hidden flex justify-center items-end"
         >
           <Image
