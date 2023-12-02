@@ -2,6 +2,7 @@ import { Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { CartWidget } from "./cart-widget";
+import { SearchForm } from "./search-form";
 
 export function Header() {
   return (
@@ -11,7 +12,7 @@ export function Header() {
           devstore
         </Link>
 
-        
+        <SearchForm />
       </div>
 
       <div className="flex items-center gap-4">
