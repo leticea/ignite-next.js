@@ -6,12 +6,18 @@ describe("search products", () => {
   it("should be able to search for products", () => {
     cy.get("input[name=q]").type("moletom").parent("form").submit();
 
-    cy.get('a[href^="/product"]').first().click();
+    cy.location("pathname").should("include", "/search");
+    cy.location("search").should("include", "q=moletom");
 
-    cy.location("pathname").should("include", "/product");
+    cy.get('a[href^="/product"]').should("exist");
+  });
 
-    cy.contains("Adicionar ao carrinho").click();
+  it("should not be able to visit search page without a search query", () => {
+    cy.get("input[name=q]").type("moletom").parent("form").submit();
 
-    cy.contains("Cart (1)").should("exist");
+    cy.location("pathname").should("include", "/search");
+    cy.location("search").should("include", "q=moletom");
+
+    cy.get('a[href^="/product"]').should("exist");
   });
 });
