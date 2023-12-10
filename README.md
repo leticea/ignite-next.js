@@ -41,8 +41,9 @@ Neste módulo aprendemos sobre o Next.js, um framework famoso do ecossistema Rea
 ## ⚙️ Como Rodar
 
 - Clone o projeto.
-- Entre na pasta do projeto e rode 'npm install' (use 'yarn install' se for essa a sua configuração).
-- npm run dev (para rodar o projeto na porta indicada).
+- Entre na pasta do projeto e rode 'pnpm add' (use 'yarn install' ou 'npm install' se for essa a sua configuração).
+- pnpm run dev (para rodar o projeto na porta indicada).
+- pnpm cypress open (para rodar o cypress).
 
 ## 🤔 Como contribuir
 
